@@ -3,11 +3,8 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <!-- Title -->
       <span class="mdl-layout-title">Title</span>
-      <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
@@ -26,18 +23,24 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
+    <div class="page-content">
+    
+      <md-input-container style="margin:20px 10px 5px 50px">
+               <input mdInput placeholder="Favorite food" value="">
+      </md-input-container>
+
+      <div class="middle">
+        <div app-servers></div>
+        <!-- <app-server></app-server> -->
+        <!-- <app-servers></app-servers> -->
+      </div>
+
+    </div>
   </main>
 </div>
-<md-input-container style="margin:80px 10px 5px 50px">
-  <input mdInput placeholder="Favorite food" value="">
-</md-input-container>
 
-<div class="middle">
-  <div app-servers></div>
-  <!-- <app-server></app-server> -->
-  <!-- <app-servers></app-servers> -->
-</div>
+
+
 
 
   
