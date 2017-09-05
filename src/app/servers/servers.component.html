@@ -1,17 +1,37 @@
 <label>Server Name</label>
-<md-input-container>
-    <input mdInput placeholder="Enter the name of Server " >
-</md-input-container>
+<!-- <md-input-container>
+    <input mdInput placeholder="Enter the name of Server " 
+            (input)="onUpdateServerName($event)">
+</md-input-container> -->
+<!-- <p>{{ serverName }}</p> -->
 
-<button 
-      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-      [disabled]="!allowNewServer"
+
+<md-input-container>
+    <input mdInput placeholder="Enter the name of Server " 
+            [(ngModel)]="serverName">
+</md-input-container>
+<p>{{ serverName }}</p>
+
+
+<button class=
+      "mdl-button md-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        [disabled]="!allowNewServer"
       (click)="onCreateServer()">Add Server 
 </button>
 
 
+
 <!-- <p [innerText]="allowNewServer"></p> --> 
-<p>{{ serverCreationStatus }}</p>
+
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
 
 
 <!-- <p>servers works!</p> -->
+
+<p *ngIf="serverCreated; else noServer">Server is created {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server created</p>
+</ng-template>
+
+<app-server *ngFor="let server of servers"></app-server>
